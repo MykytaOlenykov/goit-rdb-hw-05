@@ -11,9 +11,9 @@ DETERMINISTIC
 NO SQL
 BEGIN
 	DECLARE result FLOAT;
-	SET result = firstValue / secondValue;
+	SET result = firstValue / NULLIF(secondValue, 0);
 	RETURN result;
-END //
+END//
 
 DELIMITER ;
 
